@@ -1,0 +1,58 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Spark / Hadoop temporary files
+metastore_db/
+derby.log
+spark-warehouse/
+data/spark-warehouse/
+data/spark-temp/
+data/benchmarks/
+*.parquet
+data/parquet/*
+!data/parquet/.gitkeep
+
+# SQLite Replay State Database
+*.db
+*.db-wal
+*.db-shm
+data/replay_state.db*
+
+# Large Generated Data Files (keep small demo if needed, exclude large)
+data/raw/*.csv
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Reports and Logs
+data/reports/*.json
+!data/reports/.gitkeep
+!data/reports/benchmark_results.json
+!data/reports/final_benchmark.json
+data/reports/*.csv
+!data/reports/benchmark_results.csv
+!data/reports/final_benchmark.csv
+*.log
+d:/tmp/
+d:/pip_cache/
+tmp/
+pip_cache/
+
+# Environment Variables & IDE
+.env
+.idea/
+.vscode/
+*.swp

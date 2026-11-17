@@ -1,0 +1,164 @@
+{
+  "pipeline_name": "Day 2 Geospatial Big Data Engine",
+  "execution_timestamp": "2026-10-27T14:30:46.266999+00:00",
+  "is_valid": true,
+  "validation_errors": [],
+  "timing_benchmarks": {
+    "ingestion_seconds": 10.504,
+    "cleaning_seconds": 12.57,
+    "anomaly_detection_seconds": 5.455,
+    "eligibility_seconds": 2.664,
+    "h3_indexing_seconds": 0.298,
+    "territory_calculation_seconds": 17.056,
+    "analytics_seconds": 6.533,
+    "storage_seconds": 19.122,
+    "total_processing_seconds": 90.912
+  },
+  "ingestion_stats": {
+    "total_records": 1000,
+    "num_columns": 14,
+    "columns": [
+      "run_id",
+      "runner_id",
+      "timestamp",
+      "latitude",
+      "longitude",
+      "heart_rate",
+      "cadence",
+      "elevation_m",
+      "distance_m",
+      "device_type",
+      "activity_type",
+      "scenario_type",
+      "raw_timestamp",
+      "timestamp_epoch"
+    ],
+    "num_partitions": 1,
+    "null_counts": {
+      "run_id": 0,
+      "runner_id": 0,
+      "timestamp": 0,
+      "latitude": 0,
+      "longitude": 0
+    }
+  },
+  "data_quality": {
+    "raw_records": 1000,
+    "valid_records": 1000,
+    "quarantined_records": 0,
+    "eligible_points": 678,
+    "rejected_runs": 8,
+    "quarantine_reasons": {}
+  },
+  "cheating_detection": {
+    "total_runs_analyzed": 25,
+    "risk_category_counts": {
+      "HIGH_RISK": 5,
+      "NORMAL": 17,
+      "SUSPICIOUS": 3
+    },
+    "risk_category_percentages": {
+      "HIGH_RISK": 20.0,
+      "NORMAL": 68.0,
+      "SUSPICIOUS": 12.0
+    },
+    "anomaly_reason_counts": {
+      "CLEAN": 17,
+      "GPS_NOISE": 1,
+      "DRIVING": 4,
+      "ABNORMAL_ACCELERATION": 3,
+      "TELEPORTATION": 4,
+      "IMPOSSIBLE_SPEED": 8
+    },
+    "anomaly_point_totals": {
+      "teleport_points": 8,
+      "driving_points": 206,
+      "impossible_speed_points": 228,
+      "abnormal_accel_points": 9,
+      "noise_points": 1
+    },
+    "evaluation_metrics": {
+      "confusion_matrix": {
+        "true_positives": 6,
+        "false_positives": 2,
+        "true_negatives": 17,
+        "false_negatives": 0
+      },
+      "metrics": {
+        "precision": 0.75,
+        "recall": 1.0,
+        "f1_score": 0.8571,
+        "total_runs_evaluated": 25
+      },
+      "scenario_risk_distribution": {
+        "driving": {
+          "NORMAL": 0,
+          "SUSPICIOUS": 0,
+          "HIGH_RISK": 4
+        },
+        "walking": {
+          "NORMAL": 3,
+          "SUSPICIOUS": 0,
+          "HIGH_RISK": 0
+        },
+        "normal_run": {
+          "NORMAL": 9,
+          "SUSPICIOUS": 0,
+          "HIGH_RISK": 0
+        },
+        "gps_spoofing": {
+          "NORMAL": 0,
+          "SUSPICIOUS": 2,
+          "HIGH_RISK": 0
+        },
+        "gps_noise": {
+          "NORMAL": 0,
+          "SUSPICIOUS": 1,
+          "HIGH_RISK": 1
+        },
+        "fast_run": {
+          "NORMAL": 5,
+          "SUSPICIOUS": 0,
+          "HIGH_RISK": 0
+        }
+      }
+    }
+  },
+  "runner_summary": {
+    "active_runners": 17,
+    "valid_runs": 17,
+    "accepted_gps_points": 678,
+    "rejected_gps_points": 0,
+    "total_valid_cleaned_points": 1000,
+    "total_distance_km": 10.75
+  },
+  "territory_conquest": {
+    "total_claims": 54,
+    "total_unique_zones": 36,
+    "initial_captures": 36,
+    "takeovers": 18,
+    "same_owner_revisits": 0,
+    "total_ownership_changes": 54
+  },
+  "saved_parquet_datasets": {
+    "cleaned_points": "D:\\BDA\\data\\demo_parquet\\cleaned_points",
+    "quarantined_points": "D:\\BDA\\data\\demo_parquet\\quarantined_points",
+    "point_anomalies": "D:\\BDA\\data\\demo_parquet\\point_anomalies",
+    "run_anomalies": "D:\\BDA\\data\\demo_parquet\\run_anomalies",
+    "eligible_points": "D:\\BDA\\data\\demo_parquet\\eligible_points",
+    "h3_points": "D:\\BDA\\data\\demo_parquet\\h3_points",
+    "zone_visits": "D:\\BDA\\data\\demo_parquet\\zone_visits",
+    "claim_events": "D:\\BDA\\data\\demo_parquet\\claim_events",
+    "ownership_history": "D:\\BDA\\data\\demo_parquet\\ownership_history",
+    "current_ownership": "D:\\BDA\\data\\demo_parquet\\current_ownership",
+    "zone_statistics": "D:\\BDA\\data\\demo_parquet\\zone_statistics",
+    "leaderboard": "D:\\BDA\\data\\demo_parquet\\leaderboard",
+    "contested_zones": "D:\\BDA\\data\\demo_parquet\\contested_zones"
+  },
+  "configuration": {
+    "h3_resolution": 9,
+    "min_consecutive_points": 2,
+    "input_path": "D:/BDA/data/raw/gps_demo.csv",
+    "output_dir": "D:/BDA/data/demo_parquet"
+  }
+}

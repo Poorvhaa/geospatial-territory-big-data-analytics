@@ -1,0 +1,4 @@
+scale,status,input_records,file_size_mb,total_duration_s,records_per_second,ingestion_s,cleaning_s,cheat_detection_s,h3_indexing_s,territory_conquest_s,analytics_s,parquet_write_s,initial_memory_mb,peak_memory_mb,error_message
+100K,SUCCESS,100000,11.22,99.767,1002.3,9.7,19.629,6.713,0.229,18.847,7.89,26.29,89.56,91.04,
+500K,SUCCESS,500000,56.77,155.453,3216.4,14.9,27.829,6.366,0.216,20.829,18.135,53.238,89.25,90.59,
+1M,SUCCESS,1000000,113.88,259.114,3859.3,42.523,98.007,7.186,0.284,23.884,18.272,53.191,89.49,90.89,

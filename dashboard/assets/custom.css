@@ -1,0 +1,324 @@
+/* ====================================================================
+   TERRITORY INTELLIGENCE - BI DASHBOARD DESIGN SYSTEM
+   Theme: High-Tech Geospatial Dark Mode
+   Colors:
+     Background: #0B1120
+     Panels/Cards: #151E30
+     Accent Sky: #38BDF8
+     Success: #22C55E
+     Warning: #F59E0B
+     Danger: #EF4444
+     Text Primary: #F8FAFC
+     Text Secondary: #94A3B8
+     Border: rgba(56, 189, 248, 0.15)
+   ==================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+html, body, [class*="css"] {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #F8FAFC;
+    background-color: #0B1120;
+}
+
+/* Base Streamlit App Container */
+.stApp {
+    background-color: #0B1120 !important;
+    color: #F8FAFC !important;
+}
+
+/* Fix Streamlit Header Bar - eliminate white strip at the top */
+header[data-testid="stHeader"],
+.stAppHeader {
+    background-color: #0B1120 !important;
+    background: #0B1120 !important;
+    color: #F8FAFC !important;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.12) !important;
+}
+
+header[data-testid="stHeader"] *,
+.stAppHeader * {
+    color: #F8FAFC !important;
+}
+
+/* Main Content Container Padding */
+.block-container {
+    padding-top: 1.5rem !important;
+    padding-bottom: 2rem !important;
+    max-width: 98% !important;
+}
+
+/* Hide Streamlit Native Multipage Auto-Nav in favor of Custom Sidebar */
+[data-testid="stSidebarNav"],
+nav[data-testid="stSidebarNav"],
+div[data-testid="stSidebarNav"],
+ul[data-testid="stSidebarNavItems"] {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Sidebar Customization */
+section[data-testid="stSidebar"] {
+    background-color: #0F172A !important;
+    border-right: 1px solid rgba(56, 189, 248, 0.12);
+}
+
+section[data-testid="stSidebar"] .block-container {
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.5rem !important;
+}
+
+/* Sidebar Branding Header */
+.sidebar-brand {
+    padding: 0.5rem 0.25rem 1rem 0.25rem;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.18);
+    margin-bottom: 1rem;
+}
+
+.sidebar-brand h1 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: #38BDF8;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sidebar-brand p {
+    font-size: 0.72rem;
+    color: #94A3B8;
+    margin: 0.25rem 0 0 0;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* Custom Navigation Radio Styling in Sidebar */
+section[data-testid="stSidebar"] div[data-testid="stRadio"] > div {
+    gap: 0.35rem;
+}
+
+section[data-testid="stSidebar"] div[data-testid="stRadio"] label {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 6px;
+    padding: 0.45rem 0.75rem !important;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    margin-bottom: 0.1rem;
+}
+
+section[data-testid="stSidebar"] div[data-testid="stRadio"] label:hover {
+    background: rgba(56, 189, 248, 0.12) !important;
+    border-color: rgba(56, 189, 248, 0.3) !important;
+    color: #38BDF8 !important;
+}
+
+section[data-testid="stSidebar"] div[data-testid="stRadio"] label[data-checked="true"] {
+    background: rgba(56, 189, 248, 0.18) !important;
+    border-color: #38BDF8 !important;
+    font-weight: 600;
+}
+
+/* System Badge */
+.system-badge {
+    display: inline-block;
+    padding: 0.2rem 0.55rem;
+    border-radius: 9999px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    background: rgba(56, 189, 248, 0.12);
+    color: #38BDF8;
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    margin-top: 0.4rem;
+}
+
+.system-badge-warning {
+    background: rgba(245, 158, 11, 0.12);
+    color: #F59E0B;
+    border-color: rgba(245, 158, 11, 0.25);
+}
+
+/* Metric Cards - Optimized for clean layout and no awkward wrapping */
+.kpi-container {
+    background: #151E30;
+    border: 1px solid rgba(56, 189, 248, 0.12);
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    height: 100%;
+    min-height: 125px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.kpi-container:hover {
+    border-color: rgba(56, 189, 248, 0.35);
+    transform: translateY(-2px);
+}
+
+.kpi-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94A3B8;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.kpi-value {
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: #F8FAFC;
+    line-height: 1.2;
+    font-family: 'JetBrains Mono', monospace;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: -0.02em;
+}
+
+.kpi-subtext {
+    font-size: 0.70rem;
+    color: #64748B;
+    margin-top: 0.25rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.kpi-accent-blue { border-left: 3px solid #38BDF8; }
+.kpi-accent-green { border-left: 3px solid #22C55E; }
+.kpi-accent-amber { border-left: 3px solid #F59E0B; }
+.kpi-accent-red { border-left: 3px solid #EF4444; }
+.kpi-accent-purple { border-left: 3px solid #A855F7; }
+
+/* Section Header */
+.section-header {
+    margin-top: 0.5rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.section-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #F8FAFC;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section-desc {
+    font-size: 0.8rem;
+    color: #94A3B8;
+    margin-top: 0.15rem;
+}
+
+/* Empty State Box */
+.empty-state-box {
+    background: #151E30;
+    border: 1px dashed rgba(148, 163, 184, 0.25);
+    border-radius: 10px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    color: #94A3B8;
+    margin: 1.5rem 0;
+}
+
+.empty-state-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #F8FAFC;
+    margin-bottom: 0.35rem;
+}
+
+/* Table Card */
+.table-panel {
+    background: #151E30;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #0B1120;
+}
+::-webkit-scrollbar-thumb {
+    background: #1E293B;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #38BDF8;
+}
+
+/* Streamlit Native Component Overrides */
+div[data-testid="stMetricValue"] {
+    font-family: 'JetBrains Mono', monospace !important;
+    color: #38BDF8 !important;
+    font-size: 1.6rem !important;
+}
+
+div[data-testid="stMetricLabel"] {
+    color: #94A3B8 !important;
+    font-size: 0.78rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* Button Styling */
+.stButton > button {
+    background-color: #1E293B;
+    color: #F8FAFC;
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    padding: 0.45rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.stButton > button:hover {
+    background-color: #38BDF8;
+    color: #0B1120;
+    border-color: #38BDF8;
+}
+
+.stDownloadButton > button {
+    background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
+    color: #FFFFFF !important;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.45rem 1.1rem;
+}
+
+.stDownloadButton > button:hover {
+    opacity: 0.9;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+}
